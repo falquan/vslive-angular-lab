@@ -1,2 +1,10 @@
 <div>{{joke.setup}}</div>
 <div>{{joke.punchline}}</div>
+<div>
+  <label for="lolCount">LOLs:</label>
+  <app-upvote id="lolCount" [votes]="lols" (incrementVotes)="onLolIncrement()"></app-upvote>
+</div>
+<div>
+  <label for="groansCount">Groans:</label>
+  <app-upvote id="groansCount" [votes]="groans" (incrementVotes)="onGroanIncrement()"></app-upvote>
+</div>

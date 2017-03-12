@@ -8,10 +8,28 @@ import { Joke } from './joke.model';
 })
 export class JokeComponent implements OnInit {
   joke : Joke = Joke.JOKE
+  setup : string;
+  punchline : string;
+  lols: number;
+  groans: number;
 
-  constructor() { }
+  constructor() {
+    this.setup = this.joke.setup;
+    this.punchline = this.joke.punchline;
+    this.lols = this.joke.lolCount();
+    this.groans = this.joke.groanCount();
+  }
 
   ngOnInit() {
   }
 
+  onGroanIncrement() : void {
+    this.joke.addGroan();
+    this.groans++;
+  }
+
+  onLolIncrement() : void {
+    this.joke.addLol();
+    this.lols++;
+  }
 }

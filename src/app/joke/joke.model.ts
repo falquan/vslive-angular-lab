@@ -8,8 +8,8 @@ export class Joke {
         this.punchline = punchline;
     }
 
-    private setup : string;
-    private punchline : string;
+    setup : string;
+    punchline : string;
 
     private lols? : Vote;
     private groans? : Vote;
