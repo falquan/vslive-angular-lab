@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Joke } from './joke.model';
 
 @Component({
@@ -11,20 +11,19 @@ export class JokeComponent implements OnInit {
   // a backing model and then pull out the relevant data
   // for mutation in the form, rather than mutating the state
   // of a shared model object.
-  joke : Joke = Joke.JOKE
+  @Input() joke : Joke = Joke.JOKE;
   setup : string;
   punchline : string;
   lols: number;
   groans: number;
 
-  constructor() {
+  constructor() {}
+
+  ngOnInit() {
     this.setup = this.joke.setup;
     this.punchline = this.joke.punchline;
     this.lols = this.joke.lolCount();
     this.groans = this.joke.groanCount();
-  }
-
-  ngOnInit() {
   }
 
   onGroanIncrement() : void {

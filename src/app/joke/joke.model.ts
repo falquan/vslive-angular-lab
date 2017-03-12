@@ -2,18 +2,22 @@ import { Vote } from './vote.model'
 
 export class Joke {
     static JOKE : Joke = new Joke('poop', 'more poop');
+    static JOKE_DB : Array<Joke> = [
+      new Joke('poop', 'more poop'),
+      new Joke('shit', 'more shit')
+    ];
 
     constructor(setup:string, punchline:string) {
         this.setup = setup;
         this.punchline = punchline;
     }
 
-    setup : string;
-    punchline : string;
+    public setup : string;
+    public punchline : string;
 
-    private lols? : Vote;
-    private groans? : Vote;
-    private source? : string;
+    public lols? : Vote;
+    public groans? : Vote;
+    public source? : string;
 
     groanCount() : number {
         if (this.groans) {
