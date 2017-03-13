@@ -22,8 +22,8 @@ export class JokeComponent implements OnInit {
   ngOnInit() {
     this.setup = this.joke.setup;
     this.punchline = this.joke.punchline;
-    this.lols = this.joke.lolCount();
-    this.groans = this.joke.groanCount();
+    this.lols = this.joke.lolCount;
+    this.groans = this.joke.groanCount;
   }
 
   onGroanIncrement() : void {

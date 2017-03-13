@@ -19,7 +19,7 @@ export class Joke {
     public groans? : Vote;
     public source? : string;
 
-    groanCount() : number {
+    get groanCount() : number {
         if (this.groans) {
             return this.groans.voteCount;
         }
@@ -33,7 +33,7 @@ export class Joke {
         }
     }
 
-    lolCount() : number {
+    get lolCount() : number {
         if (this.lols) {
             return this.lols.voteCount;
         }
