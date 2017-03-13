@@ -1,1 +1,4 @@
-<app-joke *ngFor="let joke of jokes" [joke]="joke"></app-joke>
+<!-- when using a service, use '*ngFor="let joke of jokes | async"' -->
+<div *ngFor="let joke of jokes" (click)="selectJoke(joke.id)">
+  {{joke.setup}}
+</div>

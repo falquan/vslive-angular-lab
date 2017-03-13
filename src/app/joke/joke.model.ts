@@ -1,17 +1,19 @@
 import { Vote } from './vote.model'
 
 export class Joke {
-    static JOKE : Joke = new Joke('poop', 'more poop');
+    static JOKE : Joke = new Joke('one', 'poop', 'more poop');
     static JOKE_DB : Array<Joke> = [
-      new Joke('poop', 'more poop'),
-      new Joke('shit', 'more shit')
+      new Joke('two', 'poop', 'more poop'),
+      new Joke('three', 'shit', 'more shit')
     ];
 
-    constructor(setup:string, punchline:string) {
+    constructor(id:string, setup:string, punchline:string) {
+        this.id = id;
         this.setup = setup;
         this.punchline = punchline;
     }
 
+    public id : string;
     public setup : string;
     public punchline : string;
 

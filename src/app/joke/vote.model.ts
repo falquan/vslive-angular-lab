@@ -1,5 +1,7 @@
 export class Vote {
-    constructor(public vote: number) {}
+    constructor(vote: number) {}
+
+    private vote : number;
 
     increment() : void {
         this.vote++;

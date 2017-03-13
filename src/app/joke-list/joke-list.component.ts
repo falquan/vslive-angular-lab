@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Joke } from '../joke/joke.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-joke-list',
@@ -9,8 +10,12 @@ import { Joke } from '../joke/joke.model';
 export class JokeListComponent implements OnInit {
   jokes : Array<Joke> = Joke.JOKE_DB;
 
-  constructor() {}
+  constructor(private router:Router) {}
 
   ngOnInit() {
+  }
+
+  selectJoke(id:string) {
+    this.router.navigateByUrl(`jokes/${id}`);
   }
 }
