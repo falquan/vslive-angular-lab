@@ -5,7 +5,10 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-joke-list',
   templateUrl: './joke-list.component.html',
-  styleUrls: ['./joke-list.component.css']
+  styleUrls: ['./joke-list.component.css'],
+//  changeDetection: changeDetection.onPush
+// Use this to attempt to update smaller chunks of the
+// DOM to improve performance for large payloads.
 })
 export class JokeListComponent implements OnInit {
   jokes : Array<Joke> = Joke.JOKE_DB;
